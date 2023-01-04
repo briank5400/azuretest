@@ -24,11 +24,11 @@ resource "azurerm_virtual_network" "example" {
   location            = "westus2"
   resource_group_name = "myTFResourceGroupCloud"
 
-  address_space       = ["10.2.0.0/16"]
-  dns_servers         = ["10.2.0.4", "10.2.0.5"]
+  address_space       = ["10.3.0.0/16"]
+  dns_servers         = ["10.3.0.4", "10.3.0.5"]
 
   subnet {
     name           = "subnet1"
-    address_prefix = "10.2.1.0/24"
+    address_prefix = "10.3.1.0/24"
   }
 }
