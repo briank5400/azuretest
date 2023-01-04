@@ -16,12 +16,12 @@ provider "azurerm" {
 
 variable "rgname" { 
   type = string
-  value = "myTFResourceGroupCloud"
+  default = "myTFResourceGroupCloud"
 }
 
 variable "mylocation" { 
   type = string
-  value = "westus2"
+  default = "westus2"
 }
 
 
