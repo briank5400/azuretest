@@ -21,8 +21,9 @@ resource "azurerm_resource_group" "rg" {
 
 resource "azurerm_virtual_network" "example" {
   name                = "example-network"
-  location            = azurerm_resource_group.westus2
-  resource_group_name = azurerm_resource_group.rg
+  location            = "westus2"
+  resource_group_name = "myTFResourceGroupCloud"
+
   address_space       = ["10.2.0.0/16"]
   dns_servers         = ["10.2.0.4", "10.2.0.5"]
 
