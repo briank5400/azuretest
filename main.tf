@@ -30,3 +30,4 @@ resource "azurerm_virtual_network" "example" {
     name           = "subnet1"
     address_prefix = "10.2.1.0/24"
   }
+}
