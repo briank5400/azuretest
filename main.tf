@@ -14,15 +14,26 @@ provider "azurerm" {
   features {}
 }
 
+variable "rgname" { 
+  type = string
+  value = "myTFResourceGroupCloud"
+}
+
+variable "mylocation" { 
+  type = string
+  value = "westus2"
+}
+
+
 resource "azurerm_resource_group" "rg" {
-  name     = "myTFResourceGroupCloud"
-  location = "westus2"
+  name     = var.rgname
+  location = var.mylocation
 }
 
 resource "azurerm_virtual_network" "example" {
   name                = "example-network"
-  location            = "westus2"
-  resource_group_name = "myTFResourceGroupCloud"
+  location            = var.mylocation
+  resource_group_name = var.rgname
 
   address_space       = ["10.3.0.0/16"]
   dns_servers         = ["10.3.0.4", "10.3.0.5"]
